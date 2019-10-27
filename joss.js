@@ -3,7 +3,7 @@ const bot = new Discord.Client()
 const fs = require("fs")
 bot.commands = new Discord.Collection()
 bot.aliases = new Discord.Collection()
-let coins = require("./storage/coins.json")
+let coins = require("./node_modules/storage/coins.json")
 fs.readdir("./cmds", (err, files) => {
     if (err) console.log(err)
     let jsfile = files.filter(f => f.split(".").pop() === "js")
@@ -47,7 +47,7 @@ bot.on("message", async message => {
     console.log(`${coinAmt} : ${baseAmt}`)
     if (!coins[message.author.id]) {coins[message.author.id] = {coins: 0}}
     if (coinAmt == baseAmt) {coins[message.author.id] = {coins: coins[message.author.id].coins + coinAmt}
-    fs.writeFile("./storage/coins.json", JSON.stringify(coins), err => {if (err) console.log(err)})}
+    fs.writeFile("./node_modules/storage/coins.json", JSON.stringify(coins), err => {if (err) console.log(err)})}
     if (message.author.bot) return
     if (message.channel.type === "dm") return
     if (message.attachments.size > 0) return
@@ -93,7 +93,7 @@ bot.login(process.env.token)
 
 
 /*const Discord = require("discord.js")
-let coins = require("../storage/coins.json")
+let coins = require("../node_modules/storage/coins.json")
 
 module.exports.run = async(bot, message, args) => {
     try {
