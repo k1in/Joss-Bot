@@ -42,13 +42,7 @@ bot.on("message", async message => {
     let commandFile = bot.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)))
     let sender = message.author
     let msg = message.content.toUpperCase()
-    let coinAmt = Math.floor(Math.random() * 1) + 1
-    let baseAmt = Math.floor(Math.random() * 1) + 1
 
-    console.log(`${coinAmt} : ${baseAmt}`)
-    if (!coins[message.author.id]) {coins[message.author.id] = {coins: 0}}
-    if (coinAmt == baseAmt) {coins[message.author.id] = {coins: coins[message.author.id].coins + coinAmt}
-    fs.writeFile("./coins.json", JSON.stringify(coins), err => {if (err) console.log(err)})}
     if (message.author.bot) return
     if (message.channel.type === "dm") return
     if (message.attachments.size > 0) return
