@@ -1,5 +1,5 @@
 const Discord = require("discord.js")
-let coins = require("../node_modules/storage/coins.json")
+let coins = require("../coins.json")
 
 module.exports.run = async(bot, message, args) => {
     try {
@@ -25,21 +25,21 @@ module.exports.run = async(bot, message, args) => {
                 message.channel.send(embed)
                 if (!coins[message.author.id]) {coins[message.author.id] = {coins: 0}}
                 coins[message.author.id] = {coins: coins[message.author.id].coins + Math.floor(parseInt(args[0]) * coef1)}
-                fs.writeFile("../node_modules/storage/coins.json", JSON.stringify(coins), (err) => {if (err) console.log(err)})
+                fs.writeFile("../coins.json", JSON.stringify(coins), (err) => {if (err) console.log(err)})
         } else if (rand1 == rand2 || rand2 == rand3 || rand1 == rand3) {
             embed.setTitle(`⠀⠀⠀⠀              ⠀⠀**Казино**`)
             embed.setDescription(`⠀⠀⠀⠀  ⠀⠀${result}\n⠀⠀  🎰**ВЫ ПОБЕДИЛИ**🎰\nВаш выигрыш составил: ${args[0]} <:cookiecoin:629367595803344896>\n⠀⠀⠀⠀⠀   Ваш баланс: ${coins[message.author.id].coins + Math.floor(parseInt(args[0]))}`);
             message.channel.send(embed)
             if (!coins[message.author.id]) {coins[message.author.id] = {coins: 0}}
             coins[message.author.id] = {coins: coins[message.author.id].coins + Math.floor(parseInt(args[0]))}
-            fs.writeFile("../node_modules/storage/coins.json", JSON.stringify(coins), (err) => {if (err) console.log(err)})
+            fs.writeFile("../coins.json", JSON.stringify(coins), (err) => {if (err) console.log(err)})
         }else {
             embed.setTitle(`⠀⠀⠀⠀              **Казино**`)
             embed.setDescription(`⠀⠀⠀⠀  ${result}\n🎰**ВЫ ПРОИГРАЛИ**🎰\n⠀         Вы проиграли: ${args[0]} <:cookiecoin:629367595803344896>\n⠀⠀⠀      Ваш баланс: ${coins[message.author.id].coins - Math.floor(parseInt(args[0]))}`);
             message.channel.send(embed)
             if (!coins[message.author.id]) {coins[message.author.id] = {coins: 0}}
             coins[message.author.id] = {coins: coins[message.author.id].coins - Math.floor(parseInt(args[0]))}
-            fs.writeFile("../node_modules/storage/coins.json", JSON.stringify(coins), (err) => {if (err) console.log(err)})
+            fs.writeFile("../coins.json", JSON.stringify(coins), (err) => {if (err) console.log(err)})
         }
     }catch(err) {console.log(err)}
 }

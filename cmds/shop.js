@@ -1,6 +1,6 @@
 const Discord = require("discord.js")
 const fs = require("fs")
-let coins = require("../node_modules/storage/coins.json")
+let coins = require("../coins.json")
 
 module.exports.run = async(bot, message, args) => {
     message.delete().catch()
@@ -23,7 +23,7 @@ module.exports.run = async(bot, message, args) => {
         message.channel.send(embed)
         coins[message.author.id] = {coins: coins[message.author.id].coins - 1500}
         message.member.addRole(message.guild.roles.get('628661605718163456'))
-        fs.writeFile("../node_modules/storage/coins.json", JSON.stringify(coins), (err) => {if (err) console.log(err)})
+        fs.writeFile("../coins.json", JSON.stringify(coins), (err) => {if (err) console.log(err)})
     }else if (args[0] == '<@&633228429063487489>') {
         if (!coins[message.author.id]) {coins[message.author.id] = {coins: 0}}
         if (coins[message.author.id].coins < 1250) return message.reply(`у вас недостаточно <:cookiecoin:629367595803344896>`)
@@ -34,7 +34,7 @@ module.exports.run = async(bot, message, args) => {
         message.channel.send(embed)
         coins[message.author.id] = {coins: coins[message.author.id].coins - 1250}
         message.member.addRole(message.guild.roles.get('633228429063487489'))
-        fs.writeFile("../node_modules/storage/coins.json", JSON.stringify(coins), (err) => {if (err) console.log(err)})
+        fs.writeFile("../coins.json", JSON.stringify(coins), (err) => {if (err) console.log(err)})
     }else if (args[0] == '<@&633228398587674624>') {
         if (!coins[message.author.id]) {coins[message.author.id] = {coins: 0}}
         if (coins[message.author.id].coins < 1000) return message.reply(`у вас недостаточно <:cookiecoin:629367595803344896>`)
@@ -45,7 +45,7 @@ module.exports.run = async(bot, message, args) => {
         message.channel.send(embed)
         coins[message.author.id] = {coins: coins[message.author.id].coins - 1000}
         message.member.addRole(message.guild.roles.get('633228398587674624'))
-        fs.writeFile("../node_modules/storage/coins.json", JSON.stringify(coins), (err) => {if (err) console.log(err)})
+        fs.writeFile("../coins.json", JSON.stringify(coins), (err) => {if (err) console.log(err)})
     }else if (args[0] == '<@&633228777450635275>') {
         if (!coins[message.author.id]) {coins[message.author.id] = {coins: 0}}
         if (coins[message.author.id].coins < 850) return message.reply(`у вас недостаточно <:cookiecoin:629367595803344896>`)
@@ -56,7 +56,7 @@ module.exports.run = async(bot, message, args) => {
         message.channel.send(embed)
         coins[message.author.id] = {coins: coins[message.author.id].coins - 850}
         message.member.addRole(message.guild.roles.get('633228777450635275'))
-        fs.writeFile("../node_modules/storage/coins.json", JSON.stringify(coins), (err) => {if (err) console.log(err)})
+        fs.writeFile("../coins.json", JSON.stringify(coins), (err) => {if (err) console.log(err)})
     }else if (args[0] == '<@&633228865506115584>') {
         if (!coins[message.author.id]) {coins[message.author.id] = {coins: 0}}
         if (coins[message.author.id].coins < 700) return message.reply(`у вас недостаточно <:cookiecoin:629367595803344896>`)
@@ -67,7 +67,7 @@ module.exports.run = async(bot, message, args) => {
         message.channel.send(embed)
         coins[message.author.id] = {coins: coins[message.author.id].coins - 700}
         message.member.addRole(message.guild.roles.get('633228865506115584'))
-        fs.writeFile("../node_modules/storage/coins.json", JSON.stringify(coins), (err) => {if (err) console.log(err)})
+        fs.writeFile("../coins.json", JSON.stringify(coins), (err) => {if (err) console.log(err)})
     }else if (args[0] == '<@&633228734475927552>') {
         if (!coins[message.author.id]) {coins[message.author.id] = {coins: 0}}
         if (coins[message.author.id].coins < 500) return message.reply(`у вас недостаточно <:cookiecoin:629367595803344896>`)
@@ -78,7 +78,7 @@ module.exports.run = async(bot, message, args) => {
         message.channel.send(embed)
         coins[message.author.id] = {coins: coins[message.author.id].coins - 500}
         message.member.addRole(message.guild.roles.get('633228734475927552'))
-        fs.writeFile("../node_modules/storage/coins.json", JSON.stringify(coins), (err) => {if (err) console.log(err)})
+        fs.writeFile("../coins.json", JSON.stringify(coins), (err) => {if (err) console.log(err)})
     }else if (args[0] == '<@&633229249255309332>') {
         if (!coins[message.author.id]) {coins[message.author.id] = {coins: 0}}
         if (coins[message.author.id].coins < 300) return message.reply(`у вас недостаточно <:cookiecoin:629367595803344896>`)
@@ -89,7 +89,7 @@ module.exports.run = async(bot, message, args) => {
         message.channel.send(embed)
         coins[message.author.id] = {coins: coins[message.author.id].coins - 300}
         message.member.addRole(message.guild.roles.get('633229249255309332'))
-        fs.writeFile("../node_modules/storage/coins.json", JSON.stringify(coins), (err) => {if (err) console.log(err)})
+        fs.writeFile("../coins.json", JSON.stringify(coins), (err) => {if (err) console.log(err)})
     }else if (args[0] == '<@&633230364126478346>') {
         if (!coins[message.author.id]) {coins[message.author.id] = {coins: 0}}
         if (coins[message.author.id].coins < 100) return message.reply(`у вас недостаточно <:cookiecoin:629367595803344896>`)
@@ -100,7 +100,7 @@ module.exports.run = async(bot, message, args) => {
         message.channel.send(embed)
         coins[message.author.id] = {coins: coins[message.author.id].coins - 100}
         message.member.addRole(message.guild.roles.get('633230364126478346'))
-        fs.writeFile("../node_modules/storage/coins.json", JSON.stringify(coins), (err) => {if (err) console.log(err)})
+        fs.writeFile("../coins.json", JSON.stringify(coins), (err) => {if (err) console.log(err)})
     }else {
         message.reply('выберите роль из списка !shop и купите ее написав !buy @роль')
     }

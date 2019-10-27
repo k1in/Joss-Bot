@@ -1,5 +1,5 @@
 const Discord = require("discord.js")
-let coins = require("../node_modules/storage/coins.json")
+let coins = require("../coins.json")
 
 module.exports.run = async(bot, message, args) => {
     message.delete().catch()

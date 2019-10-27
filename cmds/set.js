@@ -1,6 +1,6 @@
 const Discord = require("discord.js")
 const fs = require("fs")
-let coins = require("../node_modules/storage/coins.json")
+let coins = require("../coins.json")
 
 module.exports.run = async(bot, message, args) => {
     message.delete().catch()
@@ -29,7 +29,7 @@ module.exports.run = async(bot, message, args) => {
     .setDescription(`${message.author} установил пользователю ${pUser} баланс ${res} <:cookiecoin:629367595803344896>`)
     .setAuthor("Установка баланса", message.author.displayAvatarURL)
     message.channel.send(embed)
-    fs.writeFile("../node_modules/storage/coins.json", JSON.stringify(coins), (err) => {if (err) console.log(err)})
+    fs.writeFile("../coins.json", JSON.stringify(coins), (err) => {if (err) console.log(err)})
     }catch(err) {console.log(err)}
 }
 module.exports.help = {
