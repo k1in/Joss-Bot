@@ -1,0 +1,17 @@
+{
+  "name": "joss-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "joss.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "node-gyp": "^6.0.0",
+    "quick.db": "^7.0.0-b22",
+    "rebuild": "^0.1.2"
+  }
+}
